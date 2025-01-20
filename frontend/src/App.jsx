@@ -3,13 +3,12 @@ import styled from "styled-components";
 
 const AppContainer = styled.div`
   display: flex;
-  justify-content: flex-start; /* Align items to the start */
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100vh; /* Make container height fill the viewport */
-  overflow-y: auto; /* Allow vertical scrolling */
-
+  height: 100vh;
+  overflow-y: auto;
   img {
     width: 100%;
     height: auto;
