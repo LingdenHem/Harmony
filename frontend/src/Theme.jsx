@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     text: "#322018",
-    background: "#F4E9CD",
+    background: "#EAE5DF",
     button: "#468189",
   },
   media: {

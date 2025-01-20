@@ -5,12 +5,16 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box ;
+    
     background-color: ${({ theme }) => theme.colors.background};
     font-family: "Manrope", serif;
 }
 
 html, body {
-    padding: 10px 30px 0 30px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden
 }
 
 h1{
@@ -38,14 +42,16 @@ button{
     padding: 10px 20px;
     cursor: pointer;
     color: white;
-    font-weight: regular;
+    font-weight: bold;
+    border: none;
+    font-size: 16px;
 }
 
 a{
     text-decoration: none;
     color:${({ theme }) => theme.colors.text};
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 `;

@@ -1,18 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import theme from "../Theme";
 
 const HeaderContainer = styled.header`
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.background};
+  padding: 50px 40px 50px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 const Navbar = styled.nav`
   display: flex;
+  margin-left: 100px;
   gap: 40px;
 `;
 
