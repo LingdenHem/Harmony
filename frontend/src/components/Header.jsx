@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
@@ -14,6 +14,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 3px solid #ccc;
   h1 {
     position: absolute;
     left: 50%;
@@ -28,6 +29,10 @@ const Navbar = styled.nav`
 `;
 
 export default function Header() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/reservation");
+  };
   return (
     <HeaderContainer>
       <Navbar>
@@ -36,7 +41,7 @@ export default function Header() {
         <Link to="/bar">Bar</Link>
       </Navbar>
       <h1> Harmony </h1>
-      <button>Reservation</button>
+      <button onClick={handleClick}>Reservation</button>
     </HeaderContainer>
   );
 }
