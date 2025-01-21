@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;

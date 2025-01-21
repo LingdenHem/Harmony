@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box ;
-    
+
     background-color: ${({ theme }) => theme.colors.background};
     font-family: "Manrope", serif;
 }
@@ -13,9 +13,9 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
     width: 100%;
     height: 100%;
-   
-    -ms-overflow-style: none;  
-    scrollbar-width: none; 
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 
@@ -33,7 +33,7 @@ h1{
 
 h2{
     color:${({ theme }) => theme.colors.text};
-    font-size:24px;
+    font-size:40px;
 
 }
 
