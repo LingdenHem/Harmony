@@ -2,6 +2,31 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { DineAPI } from "../api";
 
+const DineHeroSection = styled.section`
+  margin-bottom: 100px;
+`;
+
+const DineHeroContainer = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    filter: brightness(60%);
+  }
+
+  h1 {
+    position: absolute;
+    background: none;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+`;
 const DineSection = styled.section`
   margin-left: 100px;
 `;
@@ -34,10 +59,17 @@ function Dine() {
   }, []);
   return (
     <>
+      <DineHeroSection>
+        <DineHeroContainer>
+          <h1>Our Menu</h1>
+
+          <img src="https://images.unsplash.com/photo-1548285181-3103ce5d3db2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <img src="https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <img src="https://images.unsplash.com/photo-1648146298949-6b94f62164da?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </DineHeroContainer>
+      </DineHeroSection>
       <DineSection>
-        <DineHeader>
-          <h1>Dine</h1>
-        </DineHeader>
+        <DineHeader></DineHeader>
         <DineContainer>
           {error && <p>{error}</p>}
           {dine.length === 0 ? (

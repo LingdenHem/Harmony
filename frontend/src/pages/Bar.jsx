@@ -13,8 +13,30 @@ const BarContainer = styled.div`
   gap: 20px;
 `;
 
-const Barheader = styled.header`
-  margin-bottom: 50px;
+const BarHeroSection = styled.section`
+  margin-bottom: 100px;
+`;
+const BarHeroContainer = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+
+  h1 {
+    position: absolute;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+  }
 `;
 
 function Bar() {
@@ -35,10 +57,16 @@ function Bar() {
 
   return (
     <>
-      <BarSection>
-        <Barheader>
+      <BarHeroSection>
+        <BarHeroContainer>
           <h1>Drinks & Cocktails</h1>
-        </Barheader>
+
+          <img src="https://images.unsplash.com/photo-1615887023516-9b6bcd559e87?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <img src="https://images.unsplash.com/photo-1615887023544-3a566f29d822?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <img src="https://images.unsplash.com/photo-1615887584283-91f1be7fdc34?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </BarHeroContainer>
+      </BarHeroSection>
+      <BarSection>
         <BarContainer>
           {error && <p>{error}</p>}
           {cocktails.length === 0 ? (

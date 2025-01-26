@@ -34,8 +34,10 @@ h1{
 h2{
     color:${({ theme }) => theme.colors.text};
     font-size:40px;
+    font-weight: 500;
 
 }
+
 
 p{
    color:${({ theme }) => theme.colors.text};
