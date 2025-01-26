@@ -6,11 +6,11 @@ const dineSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    price: {
-      type: Number,
+    ingredients: {
+      type: String,
       required: true,
     },
-    image: {
+    price: {
       type: String,
       required: true,
     },
