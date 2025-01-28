@@ -5,8 +5,10 @@ const theme = {
     button: "#468189",
   },
   media: {
-    mobile: "768px",
-    tab: "998px",
+    mobile: "414px",
+    midsizeMobile: "600px",
+    tab: "1060px",
+    smallscreen: "1200px",
   },
 };
 
