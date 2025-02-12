@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { DineAPI } from "../api";
 
 const DineHeroSection = styled.section`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 
 const DineHeroContainer = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
 
   img {
     width: 100%;
@@ -27,19 +28,40 @@ const DineHeroContainer = styled.div`
     z-index: 1;
   }
 `;
-const DineSection = styled.section`
-  margin-left: 100px;
-`;
+const DineSection = styled.section``;
 
 const DineContainer = styled.div`
   padding-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-`;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-const DineHeader = styled.header`
-  margin-bottom: 50px;
+  .dine-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .dine-items p {
+    width: 100%;
+  }
+
+  @media (max-width: 1060px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 400px) {
+    .description {
+      width: 80%;
+    }
+  }
 `;
 
 function Dine() {
@@ -69,17 +91,17 @@ function Dine() {
         </DineHeroContainer>
       </DineHeroSection>
       <DineSection>
-        <DineHeader></DineHeader>
         <DineContainer>
           {error && <p>{error}</p>}
           {dine.length === 0 ? (
             <p>No Dine data available</p>
           ) : (
             dine.map((dine, index) => (
-              <div key={index}>
+              <div className="dine-items" key={index}>
                 <h2>{dine.name}</h2>
+
                 <p>{dine.ingredients}</p>
-                <p>{dine.price}</p>
+                <p style={{ fontWeight: "bold" }}>{dine.price}</p>
               </div>
             ))
           )}

@@ -42,7 +42,18 @@ const HeroContent = styled.div`
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     filter: none;
+
+    @media (max-width: 768px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
   }
+
   h1 {
     position: absolute;
     top: 50%;
@@ -51,6 +62,17 @@ const HeroContent = styled.div`
     background: none;
     color: white;
     width: 60%;
+    @media (max-width: 1060px) {
+      font-size: 35px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -75,10 +97,23 @@ const AboutContent = styled.div`
     content: " are the foundation of what we create";
     display: block;
   }
+
+  @media (max-width: 1060px) {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 150px;
+    width: 90%;
+  }
 `;
 
 const AboutImagesSection = styled.section`
   margin-top: 250px;
+
+  @media (max-width: 1060px) {
+    margin-top: 100px;
+  }
 `;
 const AboutImagesContainer = styled.div`
   display: grid;
@@ -88,6 +123,11 @@ const AboutImagesContainer = styled.div`
   img {
     width: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 function App() {

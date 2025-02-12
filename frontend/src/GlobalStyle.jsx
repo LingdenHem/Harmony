@@ -50,15 +50,35 @@ h1{
 h2{
     color:${({ theme }) => theme.colors.text};
     font-size:40px;
-    font-weight: 500;
+    font-weight: 600;
+    @media (max-width: ${({ theme }) => theme.media.smallscreen}) {
+      font-size: 30px;
+      font-weight: 600;
+    }
+    @media (max-width: ${({ theme }) => theme.media.tab}) {
+      font-size: 25px;
+      font-weight: 600;
+    }
 
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+     font-size: 20px;
+     font-weight: 600;
+    }
 }
 
 
 p{
-   color:${({ theme }) => theme.colors.text};
+ color:${({ theme }) => theme.colors.text};
    font-size:16px;
 
+   @media (max-width: ${({ theme }) => theme.media.tab}) {
+      font-size: 14px;
+    }
+
+
+   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+      font-size: 12px;
+    }
 }
 
 button{
@@ -92,6 +112,10 @@ a{
 
     @media (max-width: ${({ theme }) => theme.media.smallscreen}) {
       font-size: 20px;
+    }
+
+    @media (max-width: ${({ theme }) => theme.media.tab}) {
+      font-size: 30px;
     }
 
     @media (max-width: ${({ theme }) => theme.media.midScreen}) {

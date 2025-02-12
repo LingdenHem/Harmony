@@ -1,5 +1,6 @@
 const Cocktail_URL = "/api/cocktails";
 const Dine_URL = "/api/dine";
+const Reservation_URL = "/api/reservation";
 
 export const CocktailsAPI = async () => {
   try {
@@ -25,5 +26,27 @@ export const DineAPI = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching data", error.message);
+  }
+};
+
+export const ReservationAPI = async (bookingData) => {
+  try {
+    const response = await fetch(Reservation_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    });
+    console.log("Booking Data:", bookingData);
+
+    if (!response.ok) {
+      throw new Error("Failed to create reservation");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error posting reservation:", error.message);
   }
 };

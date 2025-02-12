@@ -4,6 +4,7 @@ import express from "express";
 import { connectDB } from "./config/db.js";
 import Dine from "./models/dine.js";
 import Cocktails from "./models/cocktails.js";
+import Reservation from "./models/reservation.js";
 
 const app = express();
 connectDB();
@@ -75,7 +76,7 @@ app.delete("/api/dine/:id", async (req, res) => {
 app.get("/api/cocktails", async (req, res) => {
   try {
     const cocktailItems = await Cocktails.find({});
-    console.log(cocktailItems);
+
     res.status(201).json({ success: true, data: cocktailItems });
   } catch (error) {
     console.log("Error fetching cocktails", error.message);
@@ -129,6 +130,43 @@ app.delete("/api/cocktails/:id", async (req, res) => {
       success: false,
       message: "Server error",
     });
+  }
+});
+
+app.post("/api/reservation", async (req, res) => {
+  const { guestCount, reservationDay, reservationTime } = req.body;
+
+  try {
+    const newReservation = new Reservation({
+      guestCount,
+      reservationDay,
+      reservationTime,
+    });
+
+    await newReservation.save();
+
+    res.status(201).json(newReservation);
+  } catch (err) {
+    res.status(400).json({ error: "Error creating reservation" });
+  }
+});
+
+app.get("/api/unavailable-times/:day", async (req, res) => {
+  const { day } = req.params;
+
+  try {
+    const reservations = await Reservation.find(
+      { reservationDay: day },
+      "reservationTime"
+    );
+
+    // Extract reserved times
+    const reservedTimes = reservations.map((res) => res.reservationTime);
+
+    res.json(reservedTimes);
+  } catch (err) {
+    console.error("Error fetching unavailable times:", err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 

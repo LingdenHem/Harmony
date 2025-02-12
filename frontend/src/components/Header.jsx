@@ -17,6 +17,10 @@ const HeaderContainer = styled.header`
   align-items: center;
   border-bottom: 3px solid #ccc;
 
+  @media (max-width: 1060px) {
+    padding: 40px 15px;
+  }
+
   h1 {
     position: absolute;
     left: 50%;
@@ -55,6 +59,7 @@ const Navbar = styled.nav`
     gap: 40px;
     transition: left 0.3s ease-in-out;
     z-index: 998;
+    font-style: italic;
   }
 `;
 

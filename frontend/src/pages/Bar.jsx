@@ -2,23 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { CocktailsAPI } from "../api";
 
-const BarSection = styled.section`
-  margin-left: 100px;
-`;
-
-const BarContainer = styled.div`
-  padding-bottom: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-`;
-
 const BarHeroSection = styled.section`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
+
 const BarHeroContainer = styled.div`
   position: relative;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
 
   img {
@@ -39,6 +30,41 @@ const BarHeroContainer = styled.div`
   }
 `;
 
+const BarSection = styled.section``;
+
+const BarContainer = styled.div`
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .bar-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .bar-items p {
+    width: 100%;
+  }
+
+  @media (max-width: 1060px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 400px) {
+    .description {
+      width: 80%;
+    }
+  }
+`;
 function Bar() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState(null);
@@ -59,7 +85,7 @@ function Bar() {
     <>
       <BarHeroSection>
         <BarHeroContainer>
-          <h1>Drinks & Cocktails</h1>
+          <h1>Cocktails</h1>
 
           <img src="https://images.unsplash.com/photo-1615887023516-9b6bcd559e87?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           <img src="https://images.unsplash.com/photo-1615887023544-3a566f29d822?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -73,7 +99,7 @@ function Bar() {
             <p>No cocktails available</p>
           ) : (
             cocktails.map((cocktail, index) => (
-              <div key={index}>
+              <div className="bar-items" key={index}>
                 <h2>{cocktail.name}</h2>
                 <p>{cocktail.ingredients}</p>
                 <p>{cocktail.price}</p>
