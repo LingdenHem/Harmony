@@ -163,8 +163,8 @@ function App() {
       </AboutSection>
       <AboutImagesSection>
         <AboutImagesContainer>
-          <img src="https://img.freepik.com/free-photo/woman-holding-vegetables-basket-front-view_23-2149893509.jpg?t=st=1737482814~exp=1737486414~hmac=ae3ae132c858b5d53c486a6f0e22405266c160d97e03a250282724a443f6529d&w=1060" />
-          <img src="https://img.freepik.com/free-photo/high-angle-woman-holding-basket_23-2149893534.jpg?t=st=1737482853~exp=1737486453~hmac=18f6ce0a8d0651355e3e2ba461ab8113335ec50ec12e2e1272a1a057bec43172&w=1060" />
+          <img src="https://img.freepik.com/free-photo/woman-holding-vegetables-basket-front-view_23-2149893509.jpg?t=st=1739553460~exp=1739557060~hmac=99d8edf61ada9a75d607b35de559a52083a8a362ba63f541ae833c91f80f16ef&w=1060" />
+          <img src="https://img.freepik.com/free-photo/high-angle-basket-with-apples_23-2149893567.jpg?t=st=1739553546~exp=1739557146~hmac=5fba28bfb4697265e13d5c3f56f55a98aee800417ed3fde5530f34532b34610f&w=1060" />
         </AboutImagesContainer>
       </AboutImagesSection>
     </>
