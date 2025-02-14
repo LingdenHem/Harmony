@@ -77,6 +77,7 @@ const BookButton = styled.div`
 
 const Styledbutton = styled.button`
   width: 100px;
+  margin-bottom: 50px;
 `;
 const TimeContainer = styled.div``;
 export default function Reservation() {
