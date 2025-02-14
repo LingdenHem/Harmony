@@ -1,13 +1,24 @@
 import dotenv from "dotenv";
-dotenv.config();
 import express from "express";
 import { connectDB } from "./config/db.js";
 import Dine from "./models/dine.js";
 import Cocktails from "./models/cocktails.js";
 import Reservation from "./models/reservation.js";
+import cors from "cors";
 
+dotenv.config();
 const app = express();
+
 connectDB();
+
+app.use(
+  cors({
+    origin: "https://harmony-frontend.onrender.com",
+    methods: ["GET", "POST", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -44,6 +55,7 @@ app.post("/api/dine", async (req, res) => {
     res.status({ sucess: true, message: "server error" });
   }
 });
+
 app.delete("/api/dine/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -170,6 +182,7 @@ app.get("/api/unavailable-times/:day", async (req, res) => {
   }
 });
 
+// Start the server
 app.listen(5000, () => {
-  console.log("Server started att 5000 hello");
+  console.log("Server started at 5000 hello");
 });

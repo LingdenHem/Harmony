@@ -1,6 +1,8 @@
-const Cocktail_URL = "/api/cocktails";
-const Dine_URL = "/api/dine";
-const Reservation_URL = "/api/reservation";
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+const Cocktail_URL = `${BASE_URL}/api/cocktails`;
+const Dine_URL = `${BASE_URL}/api/dine`;
+const Reservation_URL = `${BASE_URL}/api/reservation`;
 
 export const CocktailsAPI = async () => {
   try {
