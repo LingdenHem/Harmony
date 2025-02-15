@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL;
+export const BASE_URL = import.meta.env.VITE_API_URL;
 
 const Cocktail_URL = `${BASE_URL}/api/cocktails`;
 const Dine_URL = `${BASE_URL}/api/dine`;
