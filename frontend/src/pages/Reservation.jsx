@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ReservationAPI } from "../api";
+import { BASE_URL } from "../api";
 
 const ReservationSection = styled.section`
   margin-top: 50px;
@@ -89,7 +90,7 @@ export default function Reservation() {
 
   const fetchUnavailableTimes = async (day) => {
     try {
-      const response = await fetch(`/api/unavailable-times/${day}`);
+      const response = await fetch(`${BASE_URL}/api/unavailable-times/${day}`);
       const data = await response.json();
       setUnavailableTimes(data);
     } catch (error) {
